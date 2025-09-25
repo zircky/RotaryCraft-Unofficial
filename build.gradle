@@ -29,6 +29,8 @@ java {
     toolchain.languageVersion = JavaLanguageVersion.of(17)
 }
 
+jarJar.enable()
+
 minecraft {
     mappings channel: mapping_channel, version: mapping_version
     copyIdeResources = true
@@ -64,6 +66,10 @@ minecraft {
     }
 }
 
+reobf {
+    jarJar { }
+}
+
 mixin {
     add sourceSets.main, "${mod_id}.refmap.json"
 
@@ -73,6 +79,10 @@ mixin {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    mavenLocal()
+    maven { // Registrate
+        url "https://maven.tterrag.com/"
+    }
     maven {
         // location of the maven that hosts JEI files before January 2023
         name = "Progwml6's maven"
@@ -93,8 +103,12 @@ repositories {
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
+
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}"))
     runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
+
+    implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+    jarJar(group: 'com.tterrag.registrate', name: 'Registrate', version: minecraft_version_range)
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
@@ -131,3 +145,5 @@ tasks.named('jar', Jar).configure {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
+
+tasks.jarJar.finalizedBy('reobfJarJar')
