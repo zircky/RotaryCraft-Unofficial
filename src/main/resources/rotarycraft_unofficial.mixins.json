@@ -1,10 +1,11 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.zircky.rotarycraft_unofficial.mixin",
+  "package": "com.zircky.rotarycraft_unofficial.core.mixins",
   "compatibilityLevel": "JAVA_17",
   "refmap": "rotarycraft_unofficial.refmap.json",
   "mixins": [
+    "registrate.AbstractRegistrateAccessor"
   ],
   "client": [
   ],
