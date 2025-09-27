@@ -1,4 +1,4 @@
-package com.zircky.rotarycraft_unofficial.common;
+package com.zircky.rotarycraft_unofficial.common.data;
 
 public class RCUBlocks {
 //  // Блок мотора
