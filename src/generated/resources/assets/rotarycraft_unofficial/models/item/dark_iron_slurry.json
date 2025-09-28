@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "rotarycraft_unofficial:item/ore/dark_iron/dark_iron_slurry"
+  }
+}
