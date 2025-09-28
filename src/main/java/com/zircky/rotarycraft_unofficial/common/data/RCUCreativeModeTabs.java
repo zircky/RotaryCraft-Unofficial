@@ -4,6 +4,7 @@ import com.tterrag.registrate.util.entry.RegistryEntry;
 import com.zircky.rotarycraft_unofficial.RotaryCraftUnofficial;
 import com.zircky.rotarycraft_unofficial.api.item.IComponentItem;
 import com.zircky.rotarycraft_unofficial.api.registry.registry.RCURegistrate;
+import com.zircky.rotarycraft_unofficial.common.data.ores.RCUOres;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.*;
@@ -12,11 +13,39 @@ import org.jetbrains.annotations.NotNull;
 import static com.zircky.rotarycraft_unofficial.api.registry.RCURegistrates.REGISTRATE;
 
 public class RCUCreativeModeTabs {
+  public static RegistryEntry<CreativeModeTab> RotaryCraft = REGISTRATE.defaultCreativeTab("rotarycraft",
+          builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("rotarycraft", REGISTRATE))
+              .icon(() -> RCUItems.IRON_CASING.asStack())
+              .title(REGISTRATE.addLang("itemGroup",  RotaryCraftUnofficial.id("rotarycraft"),
+                  RotaryCraftUnofficial.NAME + " RotaryCraft Containers"))
+              .build())
+      .register();
+  public static RegistryEntry<CreativeModeTab> POWER = REGISTRATE.defaultCreativeTab("power",
+          builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("power", REGISTRATE))
+              .icon(() -> RCUItems.IRON_CASING.asStack())
+              .title(REGISTRATE.addLang("itemGroup",  RotaryCraftUnofficial.id("power"),
+                  RotaryCraftUnofficial.NAME + " RotaryCraft Containers"))
+              .build())
+      .register();
+  public static RegistryEntry<CreativeModeTab> TOOLS = REGISTRATE.defaultCreativeTab("tools",
+          builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("tools", REGISTRATE))
+              .icon(() -> RCUItems.IRON_CASING.asStack())
+              .title(REGISTRATE.addLang("itemGroup",  RotaryCraftUnofficial.id("tools"),
+                  RotaryCraftUnofficial.NAME + " RotaryCraft Containers"))
+              .build())
+      .register();
   public static RegistryEntry<CreativeModeTab> ITEMS = REGISTRATE.defaultCreativeTab("items",
           builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("items", REGISTRATE))
               .icon(() -> RCUItems.IRON_CASING.asStack())
               .title(REGISTRATE.addLang("itemGroup",  RotaryCraftUnofficial.id("items"),
-                  RotaryCraftUnofficial.NAME + " Material Fluid Containers"))
+                  RotaryCraftUnofficial.NAME + " RotaryCraft Items Containers"))
+              .build())
+      .register();
+  public static RegistryEntry<CreativeModeTab> ORES = REGISTRATE.defaultCreativeTab("ores",
+          builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("ores", REGISTRATE))
+              .icon(() -> RCUOres.COPPER_POWDERED.asStack())
+              .title(REGISTRATE.addLang("itemGroup",  RotaryCraftUnofficial.id("ores"),
+                  RotaryCraftUnofficial.NAME + " RotaryCraft Ores Containers"))
               .build())
       .register();
 
