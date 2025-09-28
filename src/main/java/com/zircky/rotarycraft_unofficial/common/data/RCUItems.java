@@ -1,6 +1,7 @@
 package com.zircky.rotarycraft_unofficial.common.data;
 
 import com.tterrag.registrate.util.entry.ItemEntry;
+import com.zircky.rotarycraft_unofficial.common.data.tools.RCUTools;
 import net.minecraft.world.item.Item;
 
 import static com.zircky.rotarycraft_unofficial.api.registry.RCURegistrates.REGISTRATE;
@@ -16,6 +17,8 @@ public class RCUItems {
       .defaultModel()
       .register();
 
-  public static void init() {}
+  public static void init() {
+    RCUTools.init();
+  }
 
 }

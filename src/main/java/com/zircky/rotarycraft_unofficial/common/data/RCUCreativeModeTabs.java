@@ -5,6 +5,7 @@ import com.zircky.rotarycraft_unofficial.RotaryCraftUnofficial;
 import com.zircky.rotarycraft_unofficial.api.item.IComponentItem;
 import com.zircky.rotarycraft_unofficial.api.registry.registry.RCURegistrate;
 import com.zircky.rotarycraft_unofficial.common.data.ores.RCUOres;
+import com.zircky.rotarycraft_unofficial.common.data.tools.RCUTools;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.*;
@@ -29,7 +30,7 @@ public class RCUCreativeModeTabs {
       .register();
   public static RegistryEntry<CreativeModeTab> TOOLS = REGISTRATE.defaultCreativeTab("tools",
           builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("tools", REGISTRATE))
-              .icon(() -> RCUItems.IRON_CASING.asStack())
+              .icon(() -> RCUTools.Screwdriver.asStack())
               .title(REGISTRATE.addLang("itemGroup",  RotaryCraftUnofficial.id("tools"),
                   RotaryCraftUnofficial.NAME + " RotaryCraft Containers"))
               .build())

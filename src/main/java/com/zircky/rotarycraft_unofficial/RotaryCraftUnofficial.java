@@ -1,6 +1,7 @@
 package com.zircky.rotarycraft_unofficial;
 
 import com.zircky.rotarycraft_unofficial.api.registry.RCURegistrates;
+import com.zircky.rotarycraft_unofficial.common.data.RCUBlocks;
 import com.zircky.rotarycraft_unofficial.common.data.RCUCreativeModeTabs;
 import com.zircky.rotarycraft_unofficial.common.data.RCUItems;
 import com.zircky.rotarycraft_unofficial.common.data.RCUMaterials;
@@ -29,6 +30,7 @@ public class RotaryCraftUnofficial {
     LOGGER.info("{} is initializing...", NAME);
     RCUItems.init();
     RCUMaterials.init();
+    RCUBlocks.init();
     RCUCreativeModeTabs.init();
     RCURegistrates.REGISTRATE.registerRegistrate();
   }
