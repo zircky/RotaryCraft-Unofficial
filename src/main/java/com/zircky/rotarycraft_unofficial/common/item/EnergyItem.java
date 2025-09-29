@@ -62,7 +62,7 @@ public class EnergyItem extends Item {
 
   @Override
   public Component getName(ItemStack stack) {
-    return Component.literal(baseName + " (" + getEnergy(stack) + " / " + maxEnergy + " kJ)");
+    return Component.literal(baseName + " (" + getEnergy(stack) + ")");
   }
 
   // --- Tooltip ---

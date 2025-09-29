@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "rotarycraft_unofficial:item/tools/rail_gun_ammo_2"
+  }
+}
