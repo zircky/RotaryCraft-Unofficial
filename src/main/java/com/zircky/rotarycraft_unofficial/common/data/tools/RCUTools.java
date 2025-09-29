@@ -1,10 +1,15 @@
 package com.zircky.rotarycraft_unofficial.common.data.tools;
 
 import com.tterrag.registrate.util.entry.ItemEntry;
+import com.zircky.rotarycraft_unofficial.api.item.tools.RCUArmorMaterials;
 import com.zircky.rotarycraft_unofficial.api.registry.RCURegistrates;
 import com.zircky.rotarycraft_unofficial.common.data.RCUCreativeModeTabs;
+import com.zircky.rotarycraft_unofficial.common.item.CustemItem;
 import com.zircky.rotarycraft_unofficial.common.item.EnergyItem;
 import com.zircky.rotarycraft_unofficial.common.item.SpringItem;
+import com.zircky.rotarycraft_unofficial.common.item.rail_gun.ItemRailGunAmmo;
+import com.zircky.rotarycraft_unofficial.common.item.tools.bedrock.*;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 
 public class RCUTools {
@@ -23,6 +28,21 @@ public class RCUTools {
   public static final ItemEntry<EnergyItem> Vacuum = RCURegistrates.REGISTRATE.item("vacuum", props -> new EnergyItem("Vacuum", props.stacksTo(1), 320000)).register();
   public static final ItemEntry<EnergyItem> KnockbackGun = RCURegistrates.REGISTRATE.item("knockback_gun", props -> new EnergyItem("Knockback Gun", props.stacksTo(1), 320000)).register();
   public static final ItemEntry<EnergyItem> GravelGun = RCURegistrates.REGISTRATE.item("gravel_gun", props -> new EnergyItem("Gravel Gun", props.stacksTo(1), 320000, "Dealing 1142.6 hearts of damage per shot")).register();
+
+  public static final ItemEntry<BedrockPickaxeItem> BedrockPickaxe = RCURegistrates.REGISTRATE.item("bedrock_pickaxe", props -> new BedrockPickaxeItem()).register();
+  public static final ItemEntry<BedrockAxeItem> BedrockAxe = RCURegistrates.REGISTRATE.item("bedrock_axe", props -> new BedrockAxeItem()).register();
+  public static final ItemEntry<BedrockShovelItem> BedrockShovel = RCURegistrates.REGISTRATE.item("bedrock_shovel", props -> new BedrockShovelItem()).register();
+  public static final ItemEntry<BedrockHoeItem> BedrockHoe = RCURegistrates.REGISTRATE.item("bedrock_hoe", props -> new BedrockHoeItem()).register();
+  public static final ItemEntry<BedrockSwordItem> BedrockSword = RCURegistrates.REGISTRATE.item("bedrock_sword", props -> new BedrockSwordItem()).register();
+  public static final ItemEntry<ItemRailGunAmmo> RailGunAmmo = RCURegistrates.REGISTRATE.item("rail_gun_ammo", ItemRailGunAmmo::new).register();
+  public static final ItemEntry<BedrockArmor> BedrockHelmet = RCURegistrates.REGISTRATE.item("bedrock_helmet", props -> new BedrockArmor("Bedrock Helmet", RCUArmorMaterials.BEDROCK, ArmorItem.Type.HELMET, props)).register();
+  public static final ItemEntry<BedrockArmor> BedrockChestplate = RCURegistrates.REGISTRATE.item("bedrock_chestplate", props -> new BedrockArmor("Bedrock Chestplate", RCUArmorMaterials.BEDROCK, ArmorItem.Type.CHESTPLATE, props)).register();
+  public static final ItemEntry<BedrockArmor> BedrockLeggings = RCURegistrates.REGISTRATE.item("bedrock_leggings", props -> new BedrockArmor("Bedrock Leggings", RCUArmorMaterials.BEDROCK, ArmorItem.Type.LEGGINGS, props)).register();
+  public static final ItemEntry<BedrockArmor> BedrockBoots = RCURegistrates.REGISTRATE.item("bedrock_boots", props -> new BedrockArmor("Bedrock Boots", RCUArmorMaterials.BEDROCK, ArmorItem.Type.BOOTS, props)).register();
+  public static final ItemEntry<BedrockArmor> NVGoggles = RCURegistrates.REGISTRATE.item("nv_goggles", props -> new BedrockArmor("Night Vision Goggles", RCUArmorMaterials.NVGM, ArmorItem.Type.HELMET, props)).register();
+  public static final ItemEntry<BedrockArmor> IOGoggles = RCURegistrates.REGISTRATE.item("io_goggles", props -> new BedrockArmor("I/O Goggles", RCUArmorMaterials.IOGM, ArmorItem.Type.HELMET, props)).register();
+  public static final ItemEntry<CustemItem> PerojectorSlide = RCURegistrates.REGISTRATE.item("perojector_slide", props -> new CustemItem("Perojector Slide", props.stacksTo(1))).register();
+
 
   public static void init() {}
 }
