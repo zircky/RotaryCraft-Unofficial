@@ -1,5 +1,6 @@
 package com.zircky.rotarycraft_unofficial.api.item.tools;
 
+import com.zircky.rotarycraft_unofficial.RotaryCraftUnofficial;
 import net.minecraft.Util;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -30,14 +31,14 @@ public enum RCUArmorMaterials implements StringRepresentable, ArmorMaterial {
     map.put(ArmorItem.Type.HELMET, 0);
   }), 0, SoundEvents.EMPTY, 0F, 0F, () -> Ingredient.EMPTY),
 
-  BEDROCK("Bedrock", 0, Util.make(new EnumMap<>(ArmorItem.Type.class), (map) -> {
+  BEDROCK("bedrock", 0, Util.make(new EnumMap<>(ArmorItem.Type.class), (map) -> {
     map.put(ArmorItem.Type.HELMET, 6);
     map.put(ArmorItem.Type.CHESTPLATE, 12);
     map.put(ArmorItem.Type.LEGGINGS, 10);
     map.put(ArmorItem.Type.BOOTS, 5);
   }), 18, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F,  0.1F, () -> Ingredient.EMPTY),
 
-  HSLA("HSLA",  24, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+  HSLA("hsla",  24, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
     map.put(ArmorItem.Type.HELMET, 3);
     map.put(ArmorItem.Type.CHESTPLATE, 7);
     map.put(ArmorItem.Type.LEGGINGS, 5);
@@ -93,7 +94,7 @@ public enum RCUArmorMaterials implements StringRepresentable, ArmorMaterial {
   }
 
   public String getName() {
-    return this.name;
+    return RotaryCraftUnofficial.MODID + ":" + this.name;
   }
 
   public float getToughness() {

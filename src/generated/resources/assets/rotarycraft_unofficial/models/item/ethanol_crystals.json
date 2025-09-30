@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "rotarycraft_unofficial:item/ethanol_crystals"
+  }
+}

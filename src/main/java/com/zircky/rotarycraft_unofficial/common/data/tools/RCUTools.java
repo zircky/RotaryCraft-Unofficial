@@ -9,6 +9,8 @@ import com.zircky.rotarycraft_unofficial.common.item.EnergyItem;
 import com.zircky.rotarycraft_unofficial.common.item.SpringItem;
 import com.zircky.rotarycraft_unofficial.common.item.rail_gun.ItemRailGunAmmo;
 import com.zircky.rotarycraft_unofficial.common.item.tools.bedrock.*;
+import com.zircky.rotarycraft_unofficial.common.item.tools.hsla_steel.HSLASteelArmor;
+import com.zircky.rotarycraft_unofficial.common.item.tools.hsla_steel.HSLASteelAxeItem;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 
@@ -42,6 +44,15 @@ public class RCUTools {
   public static final ItemEntry<BedrockArmor> NVGoggles = RCURegistrates.REGISTRATE.item("nv_goggles", props -> new BedrockArmor("Night Vision Goggles", RCUArmorMaterials.NVGM, ArmorItem.Type.HELMET, props)).register();
   public static final ItemEntry<BedrockArmor> IOGoggles = RCURegistrates.REGISTRATE.item("io_goggles", props -> new BedrockArmor("I/O Goggles", RCUArmorMaterials.IOGM, ArmorItem.Type.HELMET, props)).register();
   public static final ItemEntry<CustemItem> PerojectorSlide = RCURegistrates.REGISTRATE.item("perojector_slide", props -> new CustemItem("Perojector Slide", props.stacksTo(1))).register();
+  public static final ItemEntry<HSLASteelAxeItem> HslaSteelAxe = RCURegistrates.REGISTRATE.item("hsla_steel_axe", props -> new HSLASteelAxeItem("Hsla Steel Axe")).register();
+  public static final ItemEntry<HSLASteelAxeItem> HslaSteelHoe = RCURegistrates.REGISTRATE.item("hsla_steel_hoe", props -> new HSLASteelAxeItem("Hsla Steel Hoe")).register();
+  public static final ItemEntry<HSLASteelAxeItem> HslaSteelPickaxe = RCURegistrates.REGISTRATE.item("hsla_steel_pickaxe", props -> new HSLASteelAxeItem("Hsla Steel Pickaxe")).register();
+  public static final ItemEntry<HSLASteelAxeItem> HslaSteelShovel = RCURegistrates.REGISTRATE.item("hsla_steel_shovel", props -> new HSLASteelAxeItem("Hsla Steel Shovel")).register();
+  public static final ItemEntry<HSLASteelAxeItem> HslaSteelSword = RCURegistrates.REGISTRATE.item("hsla_steel_sword", props -> new HSLASteelAxeItem("Hsla Steel Sword")).register();
+  public static final ItemEntry<HSLASteelArmor> HslaSteelHelmet = RCURegistrates.REGISTRATE.item("hsla_steel_helmet", props -> new HSLASteelArmor("Hsla Steel Helmet", RCUArmorMaterials.HSLA, ArmorItem.Type.HELMET, props)).register();
+  public static final ItemEntry<HSLASteelArmor> HslaSteelChestplate = RCURegistrates.REGISTRATE.item("hsla_steel_chestplate", props -> new HSLASteelArmor("Hsla Steel Chestplate", RCUArmorMaterials.HSLA, ArmorItem.Type.CHESTPLATE, props)).register();
+  public static final ItemEntry<HSLASteelArmor> HslaSteelLeggings = RCURegistrates.REGISTRATE.item("hsla_steel_leggings", props -> new HSLASteelArmor("Hsla Steel Leggings", RCUArmorMaterials.HSLA, ArmorItem.Type.LEGGINGS, props)).register();
+  public static final ItemEntry<HSLASteelArmor> HslaSteelBoots = RCURegistrates.REGISTRATE.item("hsla_steel_boots", props -> new HSLASteelArmor("Hsla Steel Boots", RCUArmorMaterials.HSLA, ArmorItem.Type.BOOTS, props)).register();
 
 
   public static void init() {}
