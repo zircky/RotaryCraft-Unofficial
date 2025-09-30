@@ -16,14 +16,14 @@ import static com.zircky.rotarycraft_unofficial.api.registry.RCURegistrates.REGI
 public class RCUCreativeModeTabs {
   public static RegistryEntry<CreativeModeTab> RotaryCraft = REGISTRATE.defaultCreativeTab("rotarycraft",
           builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("rotarycraft", REGISTRATE))
-              .icon(() -> RCUItems.IRON_CASING.asStack())
+              .icon(() -> RCUItems.HSLASteelScrap.asStack())
               .title(REGISTRATE.addLang("itemGroup",  RotaryCraftUnofficial.id("rotarycraft"),
                   RotaryCraftUnofficial.NAME + " RotaryCraft Containers"))
               .build())
       .register();
   public static RegistryEntry<CreativeModeTab> POWER = REGISTRATE.defaultCreativeTab("power",
           builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("power", REGISTRATE))
-              .icon(() -> RCUItems.IRON_CASING.asStack())
+              .icon(() -> RCUItems.HSLASteelScrap.asStack())
               .title(REGISTRATE.addLang("itemGroup",  RotaryCraftUnofficial.id("power"),
                   RotaryCraftUnofficial.NAME + " RotaryCraft Containers"))
               .build())
@@ -37,7 +37,7 @@ public class RCUCreativeModeTabs {
       .register();
   public static RegistryEntry<CreativeModeTab> ITEMS = REGISTRATE.defaultCreativeTab("items",
           builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("items", REGISTRATE))
-              .icon(() -> RCUItems.IRON_CASING.asStack())
+              .icon(() -> RCUItems.BasePanel.asStack())
               .title(REGISTRATE.addLang("itemGroup",  RotaryCraftUnofficial.id("items"),
                   RotaryCraftUnofficial.NAME + " RotaryCraft Items Containers"))
               .build())

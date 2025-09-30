@@ -1,26 +1,24 @@
 package com.zircky.rotarycraft_unofficial.common.item.tools.hsla_steel;
 
-import com.zircky.rotarycraft_unofficial.api.item.tools.RCUTiers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class HSLASteelAxeItem extends AxeItem {
+  private final String name;
 
-  public HSLASteelAxeItem() {
+  public HSLASteelAxeItem(String name) {
     super(Tiers.IRON,
         2,
-        6.0F,
+        1.0F,
         new Properties()
             .stacksTo(1)
             .fireResistant()
             .durability(600)
     );
+    this.name = name;
   }
 
 
@@ -31,14 +29,7 @@ public class HSLASteelAxeItem extends AxeItem {
 
   @Override
   public Component getName(ItemStack stack) {
-    return Component.literal("Bedrock Axe");
-  }
-
-  // Тултип
-  @Override
-  public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
-    tooltip.add(Component.literal("§6The unbreakable axe"));
-    super.appendHoverText(stack, world, tooltip, flag);
+    return Component.literal(name);
   }
 
   @Override

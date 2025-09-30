@@ -5,16 +5,18 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class HSLASteelPickaxeItem extends PickaxeItem {
+  private final String name;
 
-  public HSLASteelPickaxeItem() {
+  public HSLASteelPickaxeItem(String name) {
     super(Tiers.IRON,
         2,
-        6.0F,
+        1.0F,
         new Properties()
             .stacksTo(1)
             .fireResistant()
             .durability(600)
     );
+    this.name = name;
   }
 
   @Override
@@ -24,7 +26,7 @@ public class HSLASteelPickaxeItem extends PickaxeItem {
 
   @Override
   public Component getName(ItemStack stack) {
-    return Component.translatable("HSLA Steel Pickaxe");
+    return Component.translatable(name);
   }
 
   @Override
