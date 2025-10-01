@@ -1,6 +1,7 @@
 package com.zircky.rotarycraft_unofficial.api.item.tools;
 
 import com.zircky.rotarycraft_unofficial.RotaryCraftUnofficial;
+import com.zircky.rotarycraft_unofficial.common.data.RCUItems;
 import net.minecraft.Util;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -36,14 +37,14 @@ public enum RCUArmorMaterials implements StringRepresentable, ArmorMaterial {
     map.put(ArmorItem.Type.CHESTPLATE, 12);
     map.put(ArmorItem.Type.LEGGINGS, 10);
     map.put(ArmorItem.Type.BOOTS, 5);
-  }), 18, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F,  0.1F, () -> Ingredient.EMPTY),
+  }), 18, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F,  0.1F, () -> Ingredient.of(RCUItems.BADROCK_ALLOY_INGOT)),
 
   HSLA("hsla",  24, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
     map.put(ArmorItem.Type.HELMET, 3);
     map.put(ArmorItem.Type.CHESTPLATE, 7);
     map.put(ArmorItem.Type.LEGGINGS, 5);
     map.put(ArmorItem.Type.BOOTS, 3);
-  }), 9, SoundEvents.EMPTY, 0F, 0F, () -> Ingredient.EMPTY);
+  }), 9, SoundEvents.EMPTY, 0F, 0F, () -> Ingredient.of(RCUItems.HSLASteelIngot));
 
 
   public static final StringRepresentable.EnumCodec<ArmorMaterials> CODEC = StringRepresentable.fromEnum(ArmorMaterials::values);

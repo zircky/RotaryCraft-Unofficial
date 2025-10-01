@@ -37,7 +37,7 @@ public class RCUCreativeModeTabs {
       .register();
   public static RegistryEntry<CreativeModeTab> ITEMS = REGISTRATE.defaultCreativeTab("items",
           builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("items", REGISTRATE))
-              .icon(() -> RCUItems.BasePanel.asStack())
+              .icon(() -> RCUItems.BELT.asStack())
               .title(REGISTRATE.addLang("itemGroup",  RotaryCraftUnofficial.id("items"),
                   RotaryCraftUnofficial.NAME + " RotaryCraft Items Containers"))
               .build())
