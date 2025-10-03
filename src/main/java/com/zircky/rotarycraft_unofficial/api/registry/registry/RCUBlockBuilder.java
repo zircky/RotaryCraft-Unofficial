@@ -1,4 +1,4 @@
-package com.zircky.rotarycraft_unofficial.api.registry;
+package com.zircky.rotarycraft_unofficial.api.registry.registry;
 
 import com.tterrag.registrate.AbstractRegistrate;
 import com.tterrag.registrate.builders.BlockBuilder;
@@ -120,4 +120,5 @@ public class RCUBlockBuilder<T extends Block, P> extends BlockBuilder<T, P> {
     getOwner().setDataGenerator(this, type, prov -> cons.accept(DataGenContext.from(this), prov));
     return this;
   }
+
 }

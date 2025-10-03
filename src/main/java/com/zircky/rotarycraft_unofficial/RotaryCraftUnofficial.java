@@ -18,7 +18,7 @@ public class RotaryCraftUnofficial {
   public static final String MODID = "rotarycraft_unofficial";
   private static final ResourceLocation TEMPLATE_LOCATION = new ResourceLocation(MODID, "");
   public static final String NAME = "RotaryCraft Unofficial";
-  private static final Logger LOGGER = LogManager.getLogger();
+  public static final Logger LOGGER = LogManager.getLogger();
 
   public RotaryCraftUnofficial() {
     RotaryCraftUnofficial.init();

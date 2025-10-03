@@ -1,4 +1,4 @@
-package com.zircky.rotarycraft_unofficial.api.registry;
+package com.zircky.rotarycraft_unofficial.api.registry.registry;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;

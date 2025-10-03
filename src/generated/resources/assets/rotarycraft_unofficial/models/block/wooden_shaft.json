@@ -1,0 +1,11 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "north": "rotarycraft_unofficial:block/shaft/wooden/wooden_back",
+    "south": "rotarycraft_unofficial:block/shaft/wooden/wooden_front",
+    "east": "rotarycraft_unofficial:block/shaft/wooden/wooden_left",
+    "west": "rotarycraft_unofficial:block/shaft/wooden/wooden_right",
+    "up": "rotarycraft_unofficial:block/shaft/wooden/wooden_top",
+    "down": "rotarycraft_unofficial:block/shaft/wooden/wooden_bottom"
+  }
+}

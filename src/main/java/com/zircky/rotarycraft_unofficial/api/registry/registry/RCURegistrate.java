@@ -1,6 +1,7 @@
 package com.zircky.rotarycraft_unofficial.api.registry.registry;
 
 import com.tterrag.registrate.AbstractRegistrate;
+import com.tterrag.registrate.builders.BlockEntityBuilder;
 import com.tterrag.registrate.builders.Builder;
 import com.tterrag.registrate.builders.NoConfigBuilder;
 import com.tterrag.registrate.util.OneTimeEventReceiver;
@@ -8,7 +9,6 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
-import com.zircky.rotarycraft_unofficial.api.registry.RCUBlockBuilder;
 import com.zircky.rotarycraft_unofficial.core.mixins.registrate.AbstractRegistrateAccessor;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.Registry;
@@ -18,6 +18,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -153,4 +154,5 @@ public class RCURegistrate extends AbstractRegistrate<RCURegistrate> {
                                                                                      Consumer<CreativeModeTab.Builder> config) {
     return createCreativeModeTab(parent, name, config);
   }
+
 }
