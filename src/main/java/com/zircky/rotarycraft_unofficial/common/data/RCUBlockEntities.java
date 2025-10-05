@@ -7,10 +7,10 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 
 public class RCUBlockEntities {
 
-  public static final BlockEntityEntry<BlockEntity> SHAFT_BE =
-      RCURegistrates.REGISTRATE.blockEntity("shaft", ShaftBlockEntity::new)
-          .validBlocks(RCUBlocks.WOOODEN_SHAFT)
-          .register();
+//  public static final BlockEntityEntry<BlockEntity> SHAFT_BE =
+//      RCURegistrates.REGISTRATE.blockEntity("shaft", ShaftBlockEntity::new)
+//          .validBlocks(RCUBlocks.WOOODEN_SHAFT)
+//          .register();
 
   public static void init() {}
 }
