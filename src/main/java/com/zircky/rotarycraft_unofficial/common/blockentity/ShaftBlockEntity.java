@@ -2,7 +2,7 @@ package com.zircky.rotarycraft_unofficial.common.blockentity;
 
 import com.zircky.rotarycraft_unofficial.api.interfaces.IPowerHandler;
 import com.zircky.rotarycraft_unofficial.api.library.EngLibrary;
-import com.zircky.rotarycraft_unofficial.common.data.RCUContent;
+import com.zircky.rotarycraft_unofficial.common.data.RCUTransmission;
 import com.zircky.rotarycraft_unofficial.common.registry.MaterialRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -37,7 +37,7 @@ public class ShaftBlockEntity extends BlockEntity implements IPowerHandler {
   }
 
   public ShaftBlockEntity(BlockPos pos, BlockState state) {
-    super(RCUContent.SHAFT_BE.get(), pos, state);
+    super(RCUTransmission.SHAFT_BE.get(), pos, state);
   }
 
   public void setMaterial(MaterialRegistry mat) {

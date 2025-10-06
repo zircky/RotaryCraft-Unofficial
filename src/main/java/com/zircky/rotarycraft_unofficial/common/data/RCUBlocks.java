@@ -12,7 +12,7 @@ public class RCUBlocks {
 
   public static void init() {
     RCUBlockOres.init();
-    RCUContent.init();
+    RCUTransmission.init();
   }
 }
 
