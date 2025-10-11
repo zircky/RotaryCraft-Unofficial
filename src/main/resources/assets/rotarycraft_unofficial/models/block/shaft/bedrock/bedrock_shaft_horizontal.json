@@ -3,7 +3,7 @@
 	"texture_size": [128, 32],
 	"textures": {
 		"1": "rotarycraft_unofficial:block/shaft/bedrock/bedrock_shaft",
-		"particle": "rotarycraft_unofficial:block/bedrock_shaft"
+		"particle": "rotarycraft_unofficial:block/shaft/bedrock/bedrock_shaft"
 	},
 	"elements": [
 		{

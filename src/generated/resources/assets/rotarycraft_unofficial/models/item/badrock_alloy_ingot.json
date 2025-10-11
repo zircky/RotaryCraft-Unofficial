@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "rotarycraft_unofficial:item/badrock_alloy_ingot"
+    "layer0": "rotarycraft_unofficial:item/bedrock/badrock_alloy_ingot"
   }
 }
