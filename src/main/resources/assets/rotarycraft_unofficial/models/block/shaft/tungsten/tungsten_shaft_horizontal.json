@@ -2,8 +2,8 @@
 	"parent": "block/block",
 	"texture_size": [128, 32],
 	"textures": {
-		"1": "rotarycraft_unofficial:block/shaft/wooden/wood_shaft",
-		"particle": "rotarycraft_unofficial:block/wood_shaft"
+		"1": "rotarycraft_unofficial:block/shaft/tungsten/tungsten_shaft",
+		"particle": "rotarycraft_unofficial:block/shaft/tungsten/tungsten_shaft"
 	},
 	"elements": [
 		{

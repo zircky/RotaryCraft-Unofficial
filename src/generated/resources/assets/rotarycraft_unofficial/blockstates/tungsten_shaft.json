@@ -1,5 +1,14 @@
 {
   "variants": {
-    "": { "model": "rotarycraft_unofficial:block/tungsten_shaft" }
+    "axis=x": {
+      "model": "rotarycraft_unofficial:block/shaft/tungsten/tungsten_shaft_horizontal",
+      "y": 90
+    },
+    "axis=y": {
+      "model": "rotarycraft_unofficial:block/shaft/tungsten/tungsten_shaft_vertical"
+    },
+    "axis=z": {
+      "model": "rotarycraft_unofficial:block/shaft/tungsten/tungsten_shaft_horizontal"
+    }
   }
 }
