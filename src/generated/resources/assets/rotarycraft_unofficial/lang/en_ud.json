@@ -1,10 +1,15 @@
 {
+  "block.rotarycraft_unofficial.ac_electric_engine": "ǝuıbuƎ ɔıɹʇɔǝןƎ ƆⱯ",
   "block.rotarycraft_unofficial.bedrock_shaft": "ʇɟɐɥS ʞɔoɹpǝᗺ",
   "block.rotarycraft_unofficial.dc_electric_engine": "ǝuıbuƎ ɔıɹʇɔǝןƎ Ɔᗡ",
   "block.rotarycraft_unofficial.diamond_shaft": "ʇɟɐɥS puoɯɐıᗡ",
+  "block.rotarycraft_unofficial.gasoline_engine": "ǝuıbuƎ ǝuıןosɐ⅁",
+  "block.rotarycraft_unofficial.performance_engine": "ǝuıbuƎ ǝɔuɐɯɹoɟɹǝԀ",
+  "block.rotarycraft_unofficial.steam_engine": "ǝuıbuƎ ɯɐǝʇS",
   "block.rotarycraft_unofficial.steel_shaft": "ʇɟɐɥS ןǝǝʇS",
   "block.rotarycraft_unofficial.stone_shaft": "ʇɟɐɥS ǝuoʇS",
   "block.rotarycraft_unofficial.tungsten_shaft": "ʇɟɐɥS uǝʇsbun⟘",
+  "block.rotarycraft_unofficial.wind_turbine": "ǝuıqɹn⟘ puıM",
   "block.rotarycraft_unofficial.wood_shaft": "ʇɟɐɥS pooM",
   "item.rotarycraft_unofficial.aluminum_alloy_cylinder": "ɹǝpuıןʎƆ ʎoןןⱯ ɯnuıɯnןⱯ",
   "item.rotarycraft_unofficial.aluminum_alloy_ingot": "ʇobuI ʎoןןⱯ ɯnuıɯnןⱯ",
@@ -694,9 +699,9 @@
   "item.rotarycraft_unofficial.zinc_powdered": "pǝɹǝpʍoԀ ɔuıZ",
   "item.rotarycraft_unofficial.zinc_slurry": "ʎɹɹnןS ɔuıZ",
   "item.rotarycraft_unofficial.zinc_solution": "uoıʇnןoS ɔuıZ",
-  "itemGroup.rotarycraft_unofficial.items": "sɹǝuıɐʇuoƆ sɯǝʇI ʇɟɐɹƆʎɹɐʇoᴚ ןɐıɔıɟɟou∩ ʇɟɐɹƆʎɹɐʇoᴚ",
-  "itemGroup.rotarycraft_unofficial.ores": "sɹǝuıɐʇuoƆ sǝɹO ʇɟɐɹƆʎɹɐʇoᴚ ןɐıɔıɟɟou∩ ʇɟɐɹƆʎɹɐʇoᴚ",
-  "itemGroup.rotarycraft_unofficial.power": "sɹǝuıɐʇuoƆ ʇɟɐɹƆʎɹɐʇoᴚ ןɐıɔıɟɟou∩ ʇɟɐɹƆʎɹɐʇoᴚ",
+  "itemGroup.rotarycraft_unofficial.items": "sɯǝʇI ןɐıɔıɟɟou∩ ʇɟɐɹƆʎɹɐʇoᴚ",
+  "itemGroup.rotarycraft_unofficial.ores": "sǝɹO ןɐıɔıɟɟou∩ ʇɟɐɹƆʎɹɐʇoᴚ",
+  "itemGroup.rotarycraft_unofficial.power": "ɹǝʍoԀ ןɐıɔıɟɟou∩ ʇɟɐɹƆʎɹɐʇoᴚ",
   "itemGroup.rotarycraft_unofficial.rotarycraft": "sɹǝuıɐʇuoƆ ʇɟɐɹƆʎɹɐʇoᴚ ןɐıɔıɟɟou∩ ʇɟɐɹƆʎɹɐʇoᴚ",
-  "itemGroup.rotarycraft_unofficial.tools": "sɹǝuıɐʇuoƆ ʇɟɐɹƆʎɹɐʇoᴚ ןɐıɔıɟɟou∩ ʇɟɐɹƆʎɹɐʇoᴚ"
+  "itemGroup.rotarycraft_unofficial.tools": "sןoo⟘ ןɐıɔıɟɟou∩ ʇɟɐɹƆʎɹɐʇoᴚ"
 }

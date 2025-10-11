@@ -25,28 +25,28 @@ public class RCUCreativeModeTabs {
           builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("power", REGISTRATE))
               .icon(() -> RCUItems.HSLASteelScrap.asStack())
               .title(REGISTRATE.addLang("itemGroup",  RotaryCraftUnofficial.id("power"),
-                  RotaryCraftUnofficial.NAME + " RotaryCraft Containers"))
+                  RotaryCraftUnofficial.NAME + " Power"))
               .build())
       .register();
   public static RegistryEntry<CreativeModeTab> TOOLS = REGISTRATE.defaultCreativeTab("tools",
           builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("tools", REGISTRATE))
               .icon(() -> RCUTools.Screwdriver.asStack())
               .title(REGISTRATE.addLang("itemGroup",  RotaryCraftUnofficial.id("tools"),
-                  RotaryCraftUnofficial.NAME + " RotaryCraft Containers"))
+                  RotaryCraftUnofficial.NAME + " Tools"))
               .build())
       .register();
   public static RegistryEntry<CreativeModeTab> ITEMS = REGISTRATE.defaultCreativeTab("items",
           builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("items", REGISTRATE))
               .icon(() -> RCUItems.BELT.asStack())
               .title(REGISTRATE.addLang("itemGroup",  RotaryCraftUnofficial.id("items"),
-                  RotaryCraftUnofficial.NAME + " RotaryCraft Items Containers"))
+                  RotaryCraftUnofficial.NAME + " Items"))
               .build())
       .register();
   public static RegistryEntry<CreativeModeTab> ORES = REGISTRATE.defaultCreativeTab("ores",
           builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("ores", REGISTRATE))
               .icon(() -> RCUOres.COPPER_POWDERED.asStack())
               .title(REGISTRATE.addLang("itemGroup",  RotaryCraftUnofficial.id("ores"),
-                  RotaryCraftUnofficial.NAME + " RotaryCraft Ores Containers"))
+                  RotaryCraftUnofficial.NAME + " Ores"))
               .build())
       .register();
 

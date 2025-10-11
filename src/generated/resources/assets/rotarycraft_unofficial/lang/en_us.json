@@ -1,10 +1,15 @@
 {
+  "block.rotarycraft_unofficial.ac_electric_engine": "AC Electric Engine",
   "block.rotarycraft_unofficial.bedrock_shaft": "Bedrock Shaft",
   "block.rotarycraft_unofficial.dc_electric_engine": "DC Electric Engine",
   "block.rotarycraft_unofficial.diamond_shaft": "Diamond Shaft",
+  "block.rotarycraft_unofficial.gasoline_engine": "Gasoline Engine",
+  "block.rotarycraft_unofficial.performance_engine": "Performance Engine",
+  "block.rotarycraft_unofficial.steam_engine": "Steam Engine",
   "block.rotarycraft_unofficial.steel_shaft": "Steel Shaft",
   "block.rotarycraft_unofficial.stone_shaft": "Stone Shaft",
   "block.rotarycraft_unofficial.tungsten_shaft": "Tungsten Shaft",
+  "block.rotarycraft_unofficial.wind_turbine": "Wind Turbine",
   "block.rotarycraft_unofficial.wood_shaft": "Wood Shaft",
   "item.rotarycraft_unofficial.aluminum_alloy_cylinder": "Aluminum Alloy Cylinder",
   "item.rotarycraft_unofficial.aluminum_alloy_ingot": "Aluminum Alloy Ingot",
@@ -694,9 +699,9 @@
   "item.rotarycraft_unofficial.zinc_powdered": "Zinc Powdered",
   "item.rotarycraft_unofficial.zinc_slurry": "Zinc Slurry",
   "item.rotarycraft_unofficial.zinc_solution": "Zinc Solution",
-  "itemGroup.rotarycraft_unofficial.items": "RotaryCraft Unofficial RotaryCraft Items Containers",
-  "itemGroup.rotarycraft_unofficial.ores": "RotaryCraft Unofficial RotaryCraft Ores Containers",
-  "itemGroup.rotarycraft_unofficial.power": "RotaryCraft Unofficial RotaryCraft Containers",
+  "itemGroup.rotarycraft_unofficial.items": "RotaryCraft Unofficial Items",
+  "itemGroup.rotarycraft_unofficial.ores": "RotaryCraft Unofficial Ores",
+  "itemGroup.rotarycraft_unofficial.power": "RotaryCraft Unofficial Power",
   "itemGroup.rotarycraft_unofficial.rotarycraft": "RotaryCraft Unofficial RotaryCraft Containers",
-  "itemGroup.rotarycraft_unofficial.tools": "RotaryCraft Unofficial RotaryCraft Containers"
+  "itemGroup.rotarycraft_unofficial.tools": "RotaryCraft Unofficial Tools"
 }
