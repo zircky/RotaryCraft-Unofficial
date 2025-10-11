@@ -2,8 +2,8 @@
 	"parent": "block/block",
 	"texture_size": [128, 32],
 	"textures": {
-		"1": "rotarycraft_unofficial:block/shaft/steel/steel_shaft",
-		"particle": "rotarycraft_unofficial:block/steel_shaft"
+		"1": "rotarycraft_unofficial:block/shaft/stone/stone_shaft",
+		"particle": "rotarycraft_unofficial:block/shaft/stone/stone_shaft"
 	},
 	"elements": [
 		{

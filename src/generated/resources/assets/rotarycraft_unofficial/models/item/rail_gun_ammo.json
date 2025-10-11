@@ -1,24 +1,6 @@
 {
-  "parent": "item/generated",
+  "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "rotarycraft_unofficial:item/tools/rail_gun_ammo"
-  },
-  "overrides": [
-    { "predicate": { "custom_model_data": 0 }, "model": "rotarycraft_unofficial:item/rail_gun_ammo_0" },
-    { "predicate": { "custom_model_data": 1 }, "model": "rotarycraft_unofficial:item/rail_gun_ammo_0" },
-    { "predicate": { "custom_model_data": 2 }, "model": "rotarycraft_unofficial:item/rail_gun_ammo_0" },
-    { "predicate": { "custom_model_data": 3 }, "model": "rotarycraft_unofficial:item/rail_gun_ammo_0" },
-    { "predicate": { "custom_model_data": 4 }, "model": "rotarycraft_unofficial:item/rail_gun_ammo_0" },
-    { "predicate": { "custom_model_data": 5 }, "model": "rotarycraft_unofficial:item/rail_gun_ammo_0" },
-    { "predicate": { "custom_model_data": 6 }, "model": "rotarycraft_unofficial:item/rail_gun_ammo_0" },
-    { "predicate": { "custom_model_data": 7 }, "model": "rotarycraft_unofficial:item/rail_gun_ammo_1" },
-    { "predicate": { "custom_model_data": 8 }, "model": "rotarycraft_unofficial:item/rail_gun_ammo_1" },
-    { "predicate": { "custom_model_data": 9 }, "model": "rotarycraft_unofficial:item/rail_gun_ammo_1" },
-    { "predicate": { "custom_model_data": 10 }, "model": "rotarycraft_unofficial:item/rail_gun_ammo_2" },
-    { "predicate": { "custom_model_data": 11 }, "model": "rotarycraft_unofficial:item/rail_gun_ammo_2" },
-    { "predicate": { "custom_model_data": 12 }, "model": "rotarycraft_unofficial:item/rail_gun_ammo_2" },
-    { "predicate": { "custom_model_data": 14 }, "model": "rotarycraft_unofficial:item/rail_gun_ammo_3" },
-    { "predicate": { "custom_model_data": 15 }, "model": "rotarycraft_unofficial:item/rail_gun_ammo_3" },
-    { "predicate": { "custom_model_data": 16 }, "model": "rotarycraft_unofficial:item/rail_gun_ammo_3" }
-  ]
+    "layer0": "rotarycraft_unofficial:item/tools/rail_gun_ammo_0"
+  }
 }
