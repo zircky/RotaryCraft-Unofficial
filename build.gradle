@@ -76,7 +76,18 @@ mixin {
     config "${mod_id}.mixins.json"
 }
 
-sourceSets.main.resources { srcDir 'src/generated/resources' }
+sourceSets {
+    main {
+        resources {
+            srcDir 'src/main/resources'
+            srcDir 'src/generated/resources'
+        }
+    }
+}
+
+tasks.withType(ProcessResources).configureEach {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
 
 repositories {
     mavenLocal()
@@ -147,3 +158,4 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 tasks.jarJar.finalizedBy('reobfJarJar')
+
