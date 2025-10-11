@@ -583,30 +583,45 @@ public class RCUOres {
                                     Consumer<ItemEntry<Item>> dustSetter,
                                     Consumer<ItemEntry<Item>> gemSetter,
                                     Consumer<ItemEntry<Item>> ingotSetter) {
+    String powdered = name + "_powdered";
+    powderedSetter.accept(RCURegistrates.REGISTRATE.item(powdered, Item::new)
+        .lang(displayName + " Powdered")
+        .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/ore/" + name + "/" + powdered))).register());
 
-    powderedSetter.accept(RCURegistrates.REGISTRATE.item(name + "_powdered", Item::new)
-        .lang(displayName + " Powdered").defaultModel().register());
+    String slurry = name + "_slurry";
+    slurrySetter.accept(RCURegistrates.REGISTRATE.item(slurry, Item::new)
+        .lang(displayName + " Slurry")
+        .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/ore/" + name + "/" + slurry))).register());
 
-    slurrySetter.accept(RCURegistrates.REGISTRATE.item(name + "_slurry", Item::new)
-        .lang(displayName + " Slurry").defaultModel().register());
+    String solution = name + "_solution";
+    solutionSetter.accept(RCURegistrates.REGISTRATE.item(solution, Item::new)
+        .lang(displayName + " Solution")
+        .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/ore/" + name + "/" + solution))).register());
 
-    solutionSetter.accept(RCURegistrates.REGISTRATE.item(name + "_solution", Item::new)
-        .lang(displayName + " Solution").defaultModel().register());
+    String flakes = name + "_flakes";
+    flakesSetter.accept(RCURegistrates.REGISTRATE.item(flakes, Item::new)
+        .lang(displayName + " Flakes")
+        .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/ore/" + name + "/" + flakes))).register());
 
-    flakesSetter.accept(RCURegistrates.REGISTRATE.item(name + "_flakes", Item::new)
-        .lang(displayName + " Flakes").defaultModel().register());
+    String item = name + "_item";
+    itemSetter.accept(RCURegistrates.REGISTRATE.item(item, Item::new)
+        .lang(displayName + "vItem")
+        .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/ore/" + name + "/" + item))).register());
 
-    itemSetter.accept(RCURegistrates.REGISTRATE.item(name + "_item", Item::new)
-        .lang(displayName + "vItem").defaultModel().register());
+    String dust = name + "_dust";
+    dustSetter.accept(RCURegistrates.REGISTRATE.item(dust, Item::new)
+        .lang(displayName + " Dust")
+        .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/ore/" + name + "/" + dust))).register());
 
-    dustSetter.accept(RCURegistrates.REGISTRATE.item(name + "_dust", Item::new)
-        .lang(displayName + " Dust").defaultModel().register());
+    String gem = name + "_gem";
+    gemSetter.accept(RCURegistrates.REGISTRATE.item(gem, Item::new)
+        .lang(displayName + " Gem")
+        .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/ore/" + name + "/" + gem))).register());
 
-    gemSetter.accept(RCURegistrates.REGISTRATE.item(name + "_gem", Item::new)
-        .lang(displayName + " Gem").defaultModel().register());
-
-    ingotSetter.accept(RCURegistrates.REGISTRATE.item(name + "_ingot", Item::new)
-        .lang(displayName + " Ingot").defaultModel().register());
+    String ingot = name + "_ingot";
+    ingotSetter.accept(RCURegistrates.REGISTRATE.item(ingot, Item::new)
+        .lang(displayName + " Ingot")
+        .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/ore/" + name + "/" + ingot))).register());
   }
 
   public static void registerAll() {

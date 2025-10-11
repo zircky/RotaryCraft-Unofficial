@@ -23,6 +23,9 @@ public class EngLibrary {
   public static final double rhotungsten = 19300;
   public static final double rhouranium = 19050;
 
+  public static final double tungstenDensity = EngLibrary.rhoiron*0.8+0.2*EngLibrary.rhotungsten;
+
+
   /** Shear moduli */
   public static final double Gsteel = 79.3e9;
   public static final double Giron = 82e9;

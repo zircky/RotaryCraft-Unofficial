@@ -1,54 +1,53 @@
 package com.zircky.rotarycraft_unofficial.common.data.block;
 
-import com.zircky.rotarycraft_unofficial.common.blockentity.ShaftBlockEntity;
-import com.zircky.rotarycraft_unofficial.common.data.RCUTransmission;
-import com.zircky.rotarycraft_unofficial.common.registry.MaterialRegistry;
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.Level;
+import net.minecraft.core.Direction;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.EntityBlock;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 
-public class ShaftBlock extends Block implements EntityBlock {
-//  public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.Plane.HORIZONTAL);
-//  public static final EnumProperty<Direction.Axis> AXIS = EnumProperty.create("axis", Direction.Axis.class);
+public class ShaftBlock extends RotatedPillarBlock {
+  public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
 
-  private final MaterialRegistry material;
-
-  public ShaftBlock(MaterialRegistry mat, BlockBehaviour.Properties props) {
-    super(props);
-    this.material = mat;
-    //this.registerDefaultState(this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y));
+  public ShaftBlock(BlockBehaviour.Properties properties) {
+    super(properties);
+    this.registerDefaultState(this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y));
   }
 
-  public MaterialRegistry getMaterialType() {
-    return material;
+  @Override
+  protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+    builder.add(AXIS);
   }
 
-//  @Override
-//  protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-//    pBuilder.add(AXIS);
-//  }
+  @Override
+  public BlockState getStateForPlacement(BlockPlaceContext context) {
+//    Player player = context.getPlayer();
 //
-//  @Override
-//  public BlockState getStateForPlacement(BlockPlaceContext context) {
-//    Direction.Axis axis = context.getClickedFace().getAxis();
-//    return this.defaultBlockState().setValue(AXIS, axis);
-//  }
+//    if (player == null) {
+//      return this.defaultBlockState().setValue(AXIS, Direction.Axis.Y);
+//    }
+//
+//    // Если игрок зажал Shift — ставим вертикально
+//    if (player.isShiftKeyDown()) {
+//      return this.defaultBlockState().setValue(AXIS, Direction.Axis.Y);
+//    }
+//
+//    // По умолчанию — горизонтально, по направлению взгляда игрока
+//    Direction lookDir = player.getDirection();
+//    return this.defaultBlockState().setValue(AXIS, lookDir.getAxis());
 
-  @Override
-  public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-    ShaftBlockEntity be = new ShaftBlockEntity(pos, state);
-    be.setMaterial(material);
-    return be;
+    Direction face = context.getClickedFace();
+    return this.defaultBlockState().setValue(AXIS,
+        (face == Direction.UP || face == Direction.DOWN)
+            ? Direction.Axis.Y
+            : face.getAxis());
   }
 
-  @Override
-  public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-    return RCUTransmission.SHAFT_BE.get() == type ? (lvl, pos, st, be) -> ShaftBlockEntity.tick(lvl, pos, st, (ShaftBlockEntity) be) : null;
-  }
+
+
 }
