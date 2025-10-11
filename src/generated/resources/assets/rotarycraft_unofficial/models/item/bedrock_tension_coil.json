@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "rotarycraft_unofficial:item/bedrock_tension_coil"
+    "layer0": "rotarycraft_unofficial:item/bedrock/bedrock_tension_coil"
   }
 }
