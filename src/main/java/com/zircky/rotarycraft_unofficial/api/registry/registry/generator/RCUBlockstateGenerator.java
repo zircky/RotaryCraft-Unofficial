@@ -1,14 +1,16 @@
 package com.zircky.rotarycraft_unofficial.api.registry.registry.generator;
 
 import com.tterrag.registrate.providers.RegistrateBlockstateProvider;
-import com.zircky.rotarycraft_unofficial.RotaryCraftUnofficial;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 
 public class RCUBlockstateGenerator {
 
-  public static void generateSimpleBlock(RegistrateBlockstateProvider prov, Block block, String name) {
-    prov.simpleBlock(block, prov.models().cubeAll(name, new ResourceLocation(RotaryCraftUnofficial.MODID, "block/" + name)));
+  public static void generateSimpleBlockModel(RegistrateBlockstateProvider prov, Block block, String name) {
+    prov.simpleBlock(block, prov.models().getExistingFile(prov.modLoc("block/" + name)));
+  }
+
+  public static void generateSimpleBlock(RegistrateBlockstateProvider prov, Block block, String name, String side, String bottom, String top) {
+    prov.simpleBlock(block, prov.models().cubeBottomTop(name, prov.modLoc("block/"+side), prov.modLoc("block/"+bottom), prov.modLoc("block/"+top)));
   }
 
 }

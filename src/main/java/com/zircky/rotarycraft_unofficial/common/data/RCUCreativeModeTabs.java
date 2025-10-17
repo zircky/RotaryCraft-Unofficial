@@ -16,7 +16,7 @@ import static com.zircky.rotarycraft_unofficial.api.registry.RCURegistrates.REGI
 public class RCUCreativeModeTabs {
   public static RegistryEntry<CreativeModeTab> RotaryCraft = REGISTRATE.defaultCreativeTab("rotarycraft",
           builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("rotarycraft", REGISTRATE))
-              .icon(() -> RCUItems.HSLASteelScrap.asStack())
+              .icon(() -> RCUBlocks.GAS_TURBINE.asStack())
               .title(REGISTRATE.addLang("itemGroup",  RotaryCraftUnofficial.id("rotarycraft"),
                   RotaryCraftUnofficial.NAME + " RotaryCraft Containers"))
               .build())

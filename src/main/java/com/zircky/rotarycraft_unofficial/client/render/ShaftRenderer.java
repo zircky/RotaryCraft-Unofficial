@@ -2,7 +2,7 @@ package com.zircky.rotarycraft_unofficial.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import com.zircky.rotarycraft_unofficial.common.blockentity.ShaftBlockEntity;
+import com.zircky.rotarycraft_unofficial.common.blockentity.power.ShaftBlockEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -22,9 +22,9 @@ public class ShaftRenderer implements BlockEntityRenderer<ShaftBlockEntity> {
     BlockState state = pBlockEntity.getBlockState();
     Direction.Axis axis = state.getValue(BlockStateProperties.AXIS);
 
-    ResourceLocation modelLoc = new ResourceLocation("rotarycraft_unofficial:block/shaft/wood/wood_shaft_horizontal");
+    ResourceLocation modelLoc = ResourceLocation.parse("rotarycraft_unofficial:block/shaft/wood/wood_shaft_horizontal");
     if (axis == Direction.Axis.Y) {
-      modelLoc = new ResourceLocation("rotarycraft_unofficial:block/shaft/wood/wood_shaft_vertical");
+      modelLoc = ResourceLocation.parse("rotarycraft_unofficial:block/shaft/wood/wood_shaft_vertical");
     }
 
     BakedModel model = Minecraft.getInstance().getModelManager().getModel(modelLoc);

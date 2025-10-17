@@ -1,7 +1,7 @@
 package com.zircky.rotarycraft_unofficial.api.registry.registry.provider;
 
 import com.zircky.rotarycraft_unofficial.RotaryCraftUnofficial;
-import com.zircky.rotarycraft_unofficial.common.data.material.ShaftMaterial;
+import com.zircky.rotarycraft_unofficial.common.data.material.shaft.ShaftMaterial;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 

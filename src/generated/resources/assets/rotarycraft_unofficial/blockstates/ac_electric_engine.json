@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "rotarycraft_unofficial:engine/ac_electric_engine"
+      "model": "rotarycraft_unofficial:block/engine/ac_electric_engine"
     }
   }
 }

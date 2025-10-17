@@ -1,10 +1,7 @@
 package com.zircky.rotarycraft_unofficial;
 
 import com.zircky.rotarycraft_unofficial.api.registry.RCURegistrates;
-import com.zircky.rotarycraft_unofficial.common.data.RCUBlocks;
-import com.zircky.rotarycraft_unofficial.common.data.RCUCreativeModeTabs;
-import com.zircky.rotarycraft_unofficial.common.data.RCUItems;
-import com.zircky.rotarycraft_unofficial.common.data.RCUMaterials;
+import com.zircky.rotarycraft_unofficial.common.data.*;
 import com.zircky.rotarycraft_unofficial.utils.FormattingUtil;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
@@ -16,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 public class RotaryCraftUnofficial {
 
   public static final String MODID = "rotarycraft_unofficial";
-  private static final ResourceLocation TEMPLATE_LOCATION = new ResourceLocation(MODID, "");
+  private static final ResourceLocation TEMPLATE_LOCATION = ResourceLocation.fromNamespaceAndPath(MODID, "");
   public static final String NAME = "RotaryCraft Unofficial";
   public static final Logger LOGGER = LogManager.getLogger();
 
@@ -31,6 +28,7 @@ public class RotaryCraftUnofficial {
     RCUItems.init();
     RCUMaterials.init();
     RCUBlocks.init();
+    RCUBlockEntities.init();
     RCUCreativeModeTabs.init();
     RCURegistrates.REGISTRATE.registerRegistrate();
   }
@@ -42,7 +40,7 @@ public class RotaryCraftUnofficial {
 
     int i = path.indexOf(':');
     if (i > 0) {
-      return new ResourceLocation(path);
+      return ResourceLocation.withDefaultNamespace(path);
     } else if (i == 0) {
       path = path.substring(i + 1);
     }

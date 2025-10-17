@@ -4,18 +4,21 @@ package com.zircky.rotarycraft_unofficial.common.data.register;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.zircky.rotarycraft_unofficial.api.registry.RCURegistrates;
-import com.zircky.rotarycraft_unofficial.common.blockentity.ShaftBlockEntity;
-import com.zircky.rotarycraft_unofficial.common.data.block.ShaftBlock;
-import com.zircky.rotarycraft_unofficial.common.data.material.ShaftMaterial;
+import com.zircky.rotarycraft_unofficial.common.blockentity.power.ShaftBlockEntity;
+import com.zircky.rotarycraft_unofficial.common.data.block.power.ShaftBlock;
+import com.zircky.rotarycraft_unofficial.common.data.material.shaft.ShaftMaterial;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 public class RCUShaftRegister {
-  private static final Map<ShaftMaterial, BlockEntry<ShaftBlock>> ShAFT_BLOCKS = new HashMap<>();
+  private static final Map<ShaftMaterial, BlockEntry<ShaftBlock>> SHAFT_BLOCKS = new HashMap<>();
   private static BlockEntityEntry<ShaftBlockEntity> SHAFT_ENTITY;
   private static final String mBlock = "block/shaft/";
 
@@ -23,7 +26,7 @@ public class RCUShaftRegister {
     for (ShaftMaterial mat : ShaftMaterial.all()) {
       String name = mat.getId() + "_shaft";
       BlockEntry<ShaftBlock> block = RCURegistrates.REGISTRATE
-          .block(name, props -> new ShaftBlock(props.strength(3F).noOcclusion()))
+          .block(name, props -> new ShaftBlock(props.strength(3F).noOcclusion(), mat))
           .blockstate((ctx, prov) -> prov.getVariantBuilder(ctx.getEntry())
               .partialState().with(ShaftBlock.AXIS, Direction.Axis.X)
               .modelForState()
@@ -46,19 +49,19 @@ public class RCUShaftRegister {
           .build()
           .register();
       
-      ShAFT_BLOCKS.put(mat, block);
+      SHAFT_BLOCKS.put(mat, block);
     }
     
-    SHAFT_ENTITY = RCURegistrates.REGISTRATE.blockEntity("shaft", ShaftBlockEntity::new).validBlocks(ShAFT_BLOCKS.values().toArray(BlockEntry[]::new)).register();
+    SHAFT_ENTITY = RCURegistrates.REGISTRATE.blockEntity("shaft", (BlockEntityType<ShaftBlockEntity> type, BlockPos pos, BlockState blockState) -> new ShaftBlockEntity(type, pos, blockState)).validBlocks(SHAFT_BLOCKS.values().toArray(BlockEntry[]::new)).register();
 
   }
   
   public static BlockEntry<ShaftBlock> get(ShaftMaterial mat) {
-    return ShAFT_BLOCKS.get(mat);
+    return SHAFT_BLOCKS.get(mat);
   }
   
-  public static Collection<BlockEntry<ShaftBlock>> alL() {
-    return ShAFT_BLOCKS.values();
+  public static Collection<BlockEntry<ShaftBlock>> all() {
+    return SHAFT_BLOCKS.values();
   }
 
   public static BlockEntityEntry<ShaftBlockEntity> getEnitity() {

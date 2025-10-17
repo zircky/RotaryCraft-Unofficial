@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "rotarycraft_unofficial:engine/wind_turbine"
+      "model": "rotarycraft_unofficial:block/engine/wind_turbine"
     }
   }
 }
