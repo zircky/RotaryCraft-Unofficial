@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "rotarycraft_unofficial:tungsten_flywheel"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "rotarycraft_unofficial:blocks/tungsten_flywheel"
+}

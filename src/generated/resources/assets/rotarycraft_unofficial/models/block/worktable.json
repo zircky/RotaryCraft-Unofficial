@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "rotarycraft_unofficial:block/worktable/worktable_bottom",
+    "side": "rotarycraft_unofficial:block/worktable/worktable",
+    "top": "rotarycraft_unofficial:block/worktable/worktable_top"
+  }
+}
