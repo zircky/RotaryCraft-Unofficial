@@ -4,6 +4,7 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import com.zircky.rotarycraft_unofficial.api.item.tools.RCUArmorMaterials;
 import com.zircky.rotarycraft_unofficial.api.registry.RCURegistrates;
 import com.zircky.rotarycraft_unofficial.common.data.RCUCreativeModeTabs;
+import com.zircky.rotarycraft_unofficial.common.data.RCUFluid;
 import com.zircky.rotarycraft_unofficial.common.item.CustemItem;
 import com.zircky.rotarycraft_unofficial.common.item.EnergyItem;
 import com.zircky.rotarycraft_unofficial.common.item.SpringItem;
@@ -176,5 +177,6 @@ public class RCUTools {
 
 
   public static void init() {
+    RCUFluid.init();
   }
 }
