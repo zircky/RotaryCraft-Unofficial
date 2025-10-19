@@ -1,0 +1,15 @@
+{
+  "type": "rotarycraft_unofficial:worktable",
+  "pattern": [
+    "III",
+    "I I",
+    "III"
+  ],
+  "key": {
+    "I": { "item": "minecraft:iron_ingot" }
+  },
+  "result": {
+    "item": "minecraft:gold_ingot",
+    "count": 2
+  }
+}

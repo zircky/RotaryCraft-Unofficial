@@ -11,7 +11,7 @@ import com.zircky.rotarycraft_unofficial.common.blockentity.engine.PerformanceEn
 import com.zircky.rotarycraft_unofficial.common.blockentity.engine.HydrokineticEngineBlockEntity;
 import com.zircky.rotarycraft_unofficial.common.blockentity.engine.MicroturbineBlockEntity;
 import com.zircky.rotarycraft_unofficial.common.blockentity.engine.GasTurbineBlockEntity;
-import com.zircky.rotarycraft_unofficial.common.data.block.engine.WorktableBlockEntity;
+import com.zircky.rotarycraft_unofficial.common.blockentity.WorktableBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;

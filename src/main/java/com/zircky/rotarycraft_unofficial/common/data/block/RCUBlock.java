@@ -76,7 +76,7 @@ public class RCUBlock {
         .lang("Blast Glass Pane")
         .blockstate((ctx, prov) -> prov.paneBlock(ctx.getEntry(), "blast_glass", prov.modLoc("block/blast_glass_sibe"), prov.modLoc("block/blast_glass")))
         .item(BlockItem::new)
-        .model((ctx, prov) -> prov.withExistingParent(ctx.getName(), prov.modLoc("block/blast_glass_pane")))
+        .model((ctx, prov) -> prov.withExistingParent(ctx.getName(), prov.modLoc("block/blast_glass")))
         .build()
         .register();
 

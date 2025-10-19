@@ -1,6 +1,7 @@
 package com.zircky.rotarycraft_unofficial;
 
 import com.zircky.rotarycraft_unofficial.api.registry.RCURegistrates;
+import com.zircky.rotarycraft_unofficial.common.RCUMenu;
 import com.zircky.rotarycraft_unofficial.common.data.*;
 import com.zircky.rotarycraft_unofficial.utils.FormattingUtil;
 import net.minecraft.resources.ResourceLocation;
@@ -25,12 +26,16 @@ public class RotaryCraftUnofficial {
 
   public static void init() {
     LOGGER.info("{} is initializing...", NAME);
+    RCURegistrates.REGISTRATE.registerRegistrate();
     RCUItems.init();
     RCUMaterials.init();
     RCUBlocks.init();
     RCUBlockEntities.init();
+    RCUMenu.init();
+    RCURecipes.init();
+    RCURecipeType.init();
     RCUCreativeModeTabs.init();
-    RCURegistrates.REGISTRATE.registerRegistrate();
+
   }
 
   public static ResourceLocation id(String path) {
