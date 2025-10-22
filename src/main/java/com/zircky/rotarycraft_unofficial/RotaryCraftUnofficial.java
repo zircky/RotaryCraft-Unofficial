@@ -35,7 +35,6 @@ public class RotaryCraftUnofficial {
     RCURecipes.init();
     RCURecipeType.init();
     RCUCreativeModeTabs.init();
-
   }
 
   public static ResourceLocation id(String path) {

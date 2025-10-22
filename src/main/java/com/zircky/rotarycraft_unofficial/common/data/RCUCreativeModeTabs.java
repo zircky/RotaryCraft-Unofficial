@@ -18,7 +18,7 @@ public class RCUCreativeModeTabs {
           builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("rotarycraft", REGISTRATE))
               .icon(() -> RCUBlocks.GAS_TURBINE.asStack())
               .title(REGISTRATE.addLang("itemGroup",  RotaryCraftUnofficial.id("rotarycraft"),
-                  RotaryCraftUnofficial.NAME + " RotaryCraft Containers"))
+                  RotaryCraftUnofficial.NAME))
               .build())
       .register();
   public static RegistryEntry<CreativeModeTab> POWER = REGISTRATE.defaultCreativeTab("power",

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_glass_pane_noside",
   "textures": {
-    "pane": "rotarycraft_unofficial:block/blast_glass_sibe"
+    "pane": "rotarycraft_unofficial:block/blast_glass"
   }
 }

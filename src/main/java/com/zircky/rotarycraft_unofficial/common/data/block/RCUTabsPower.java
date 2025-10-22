@@ -1,7 +1,11 @@
 package com.zircky.rotarycraft_unofficial.common.data.block;
 
+import com.tterrag.registrate.util.entry.BlockEntityEntry;
+import com.tterrag.registrate.util.entry.BlockEntry;
 import com.zircky.rotarycraft_unofficial.api.registry.RCURegistrates;
 import com.zircky.rotarycraft_unofficial.api.registry.registry.generator.RCUBlockstateGenerator;
+import com.zircky.rotarycraft_unofficial.common.blockentity.engine.GasTurbineBlockEntity;
+import com.zircky.rotarycraft_unofficial.common.data.RCUBlocks;
 import com.zircky.rotarycraft_unofficial.common.data.RCUCreativeModeTabs;
 import com.zircky.rotarycraft_unofficial.common.data.block.engine.DCElectricEngineBlock;
 import com.zircky.rotarycraft_unofficial.common.data.block.engine.ACElectricEngineBlock;
@@ -12,16 +16,30 @@ import com.zircky.rotarycraft_unofficial.common.data.block.engine.PerformanceEng
 import com.zircky.rotarycraft_unofficial.common.data.block.engine.HydrokineticEngineBlock;
 import com.zircky.rotarycraft_unofficial.common.data.block.engine.MicroturbineBlock;
 import com.zircky.rotarycraft_unofficial.common.data.block.engine.GasTurbine;
+import com.zircky.rotarycraft_unofficial.common.data.material.engine.EngineCategory;
+import com.zircky.rotarycraft_unofficial.common.data.material.engine.EngineDefinition;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockState;
+import org.apache.commons.lang3.function.TriFunction;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
 
 import static com.zircky.rotarycraft_unofficial.common.data.RCUBlocks.*;
 
 public class RCUTabsPower {
+  public static final List<EngineDefinition<?>> ENGINE = new ArrayList<>();
   static {
     RCURegistrates.REGISTRATE.creativeModeTab(() -> RCUCreativeModeTabs.POWER);
   }
 
   private static void register() {
+
     DC_ELECTRIC_ENGINE = RCURegistrates.REGISTRATE.block("dc_electric_engine", DCElectricEngineBlock::new).lang("DC Electric Engine")
         .blockstate((ctx, prov) -> RCUBlockstateGenerator.generateSimpleBlockModel(prov, ctx.getEntry(), "engine/dc_electric_engine"))
         .item(BlockItem::new)
