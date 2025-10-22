@@ -9,7 +9,7 @@ public class RCUBlockstateGenerator {
     prov.simpleBlock(block, prov.models().getExistingFile(prov.modLoc("block/" + name)));
   }
 
-  public static void generateSimpleBlock(RegistrateBlockstateProvider prov, Block block, String name, String side, String bottom, String top) {
+  public static void generateSimpleBlockBottomTop(RegistrateBlockstateProvider prov, Block block, String name, String side, String bottom, String top) {
     prov.simpleBlock(block, prov.models().cubeBottomTop(name, prov.modLoc("block/"+side), prov.modLoc("block/"+bottom), prov.modLoc("block/"+top)));
   }
 

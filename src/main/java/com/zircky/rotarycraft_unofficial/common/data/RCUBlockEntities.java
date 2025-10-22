@@ -2,6 +2,7 @@ package com.zircky.rotarycraft_unofficial.common.data;
 
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.zircky.rotarycraft_unofficial.api.registry.RCURegistrates;
+import com.zircky.rotarycraft_unofficial.common.blockentity.BlastFurnaceBlockEntity;
 import com.zircky.rotarycraft_unofficial.common.blockentity.engine.DCElectricEngineBlockEntity;
 import com.zircky.rotarycraft_unofficial.common.blockentity.engine.ACElectricEngineBlockEntity;
 import com.zircky.rotarycraft_unofficial.common.blockentity.engine.WindTurbineBlockEntity;
@@ -70,6 +71,12 @@ public class RCUBlockEntities {
       .blockEntity("dc_electric_engine", ((BlockEntityType<DCElectricEngineBlockEntity> type, BlockPos pos, BlockState blockState) ->
           new DCElectricEngineBlockEntity(type, pos, blockState)))
       .validBlocks(RCUBlocks.DC_ELECTRIC_ENGINE)
+      .register();
+
+  public static final BlockEntityEntry<BlastFurnaceBlockEntity> BLAST_FURNACE_ENTITY = RCURegistrates.REGISTRATE
+      .blockEntity("blast_furnace", ((BlockEntityType<BlastFurnaceBlockEntity> type, BlockPos pos, BlockState blockState) ->
+          new BlastFurnaceBlockEntity(type, pos, blockState)))
+      .validBlocks(RCUBlocks.BLAST_FURNACE)
       .register();
 
   public static final BlockEntityEntry<WorktableBlockEntity> WORKTABLE = RCURegistrates.REGISTRATE

@@ -1,14 +1,9 @@
 package com.zircky.rotarycraft_unofficial.common.data.block.engine;
 
-import net.minecraft.ChatFormatting;
+import com.zircky.rotarycraft_unofficial.api.block.engine.AbstractEngineBlock;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
@@ -19,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class ACElectricEngineBlock extends Block implements EntityBlock {
+public class ACElectricEngineBlock extends AbstractEngineBlock implements EntityBlock {
   public ACElectricEngineBlock(Properties pProperties) {
     super(pProperties);
   }
@@ -39,10 +34,4 @@ public class ACElectricEngineBlock extends Block implements EntityBlock {
     return EntityBlock.super.getListener(pLevel, pBlockEntity);
   }
 
-  @Override
-  public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-    pTooltip.add(Component.literal("Power: " + "131.072" + " kW").withStyle(ChatFormatting.GRAY));
-    pTooltip.add(Component.literal("Torque: " + "512.000" + " Nm").withStyle(ChatFormatting.GRAY));
-    pTooltip.add(Component.literal("Speed: " + "256.000" + " rad/s").withStyle(ChatFormatting.GRAY));
-  }
 }

@@ -1,0 +1,14 @@
+{
+  "type": "rotarycraft_unofficial:worktable",
+  "pattern": [
+    "PSP",
+    "PPP"
+  ],
+  "key": {
+    "P": { "tag": "minecraft:planks" },
+    "S": { "item": "minecraft:stick" }
+  },
+  "result": {
+    "item": "rotarycraft_unofficial:wood_shaft"
+  }
+}

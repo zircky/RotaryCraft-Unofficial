@@ -8,6 +8,7 @@
   "block.rotarycraft_unofficial.bedrock_gearbox_8": "Bedrock 8:1 Gearbox",
   "block.rotarycraft_unofficial.bedrock_ingot_block": "Bedrock ingot Block",
   "block.rotarycraft_unofficial.bedrock_shaft": "Bedrock Shaft",
+  "block.rotarycraft_unofficial.blast_furnace": "Blast Furnace",
   "block.rotarycraft_unofficial.blast_glass": "Blast Glass",
   "block.rotarycraft_unofficial.blast_glass_pane": "Blast Glass Pane",
   "block.rotarycraft_unofficial.borer_shield_block": "Borer Shield Block",
@@ -756,6 +757,6 @@
   "itemGroup.rotarycraft_unofficial.items": "RotaryCraft Unofficial Items",
   "itemGroup.rotarycraft_unofficial.ores": "RotaryCraft Unofficial Ores",
   "itemGroup.rotarycraft_unofficial.power": "RotaryCraft Unofficial Power",
-  "itemGroup.rotarycraft_unofficial.rotarycraft": "RotaryCraft Unofficial RotaryCraft Containers",
+  "itemGroup.rotarycraft_unofficial.rotarycraft": "RotaryCraft Unofficial",
   "itemGroup.rotarycraft_unofficial.tools": "RotaryCraft Unofficial Tools"
 }

@@ -3,10 +3,9 @@ package com.zircky.rotarycraft_unofficial.common.data.block;
 import com.zircky.rotarycraft_unofficial.api.registry.RCURegistrates;
 import com.zircky.rotarycraft_unofficial.api.registry.registry.generator.RCUBlockstateGenerator;
 import com.zircky.rotarycraft_unofficial.common.data.RCUCreativeModeTabs;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.GlassBlock;
-import net.minecraft.world.level.block.IronBarsBlock;
+import net.minecraft.world.level.block.*;
 
 import static com.zircky.rotarycraft_unofficial.common.data.RCUBlocks.*;
 
@@ -64,25 +63,39 @@ public class RCUBlock {
         .build()
         .register();
 
-    BLAST_GLASS = RCURegistrates.REGISTRATE.block("blast_glass", props -> new GlassBlock(props.strength(10F).noOcclusion()))
+    BLAST_GLASS = RCURegistrates.REGISTRATE.block("blast_glass", GlassBlock::new)
         .lang("Blast Glass")
+        .initialProperties(() -> Blocks.GLASS)
+        .properties(p -> p.noOcclusion().strength(10F))
+        .addLayer(() -> RenderType::translucent)
         .blockstate((ctx, prov) -> prov.simpleBlock(ctx.getEntry()))
         .item(BlockItem::new)
         .model((ctx, prov) -> prov.withExistingParent(ctx.getName(),  prov.modLoc("block/blast_glass")))
         .build()
         .register();
 
-    BLAST_GLASS_PANE = RCURegistrates.REGISTRATE.block("blast_glass_pane", props -> new IronBarsBlock(props.strength(12.5F).noOcclusion()))
+    BLAST_GLASS_PANE = RCURegistrates.REGISTRATE.block("blast_glass_pane", IronBarsBlock::new)
         .lang("Blast Glass Pane")
-        .blockstate((ctx, prov) -> prov.paneBlock(ctx.getEntry(), "blast_glass", prov.modLoc("block/blast_glass_sibe"), prov.modLoc("block/blast_glass")))
-        .item(BlockItem::new)
-        .model((ctx, prov) -> prov.withExistingParent(ctx.getName(), prov.modLoc("block/blast_glass")))
+        .initialProperties(() -> Blocks.GLASS_PANE)
+        .properties(p -> p.strength(12.5F).sound(SoundType.GLASS).noOcclusion())
+        .addLayer(() -> RenderType::translucent)
+        .blockstate((ctx, prov) -> prov.paneBlock(ctx.getEntry(), "blast_glass", prov.modLoc("block/blast_glass"), prov.modLoc("block/blast_glass_sibe")))
+        .item()
+        .model((ctx, prov) -> prov.withExistingParent(ctx.getName(), prov.modLoc("item/blast_glass_pane")))
+        .build()
+        .register();
+
+    BLAST_FURNACE = RCURegistrates.REGISTRATE.block("blast_furnace", BlastFurnaceBlock::new)
+        .lang("Blast Furnace")
+        .blockstate((ctx, prov) -> prov.simpleBlock(ctx.getEntry(), prov.models().orientableVertical(ctx.getName(), prov.modLoc("block/blast_furnace/blast_furnace_side"), prov.modLoc("block/blast_furnace/blast_furnace_front"))))
+        .item()
+        .model((ctx, prov) -> prov.withExistingParent(ctx.getName(), prov.modLoc("block/blast_furnace")))
         .build()
         .register();
 
     WORKTABLE = RCURegistrates.REGISTRATE.block("worktable", WorktableBlock::new)
         .lang("Worktable")
-        .blockstate((ctx, prov) -> RCUBlockstateGenerator.generateSimpleBlock(prov, ctx.getEntry(), ctx.getName(), "worktable/worktable", "worktable/worktable_bottom", "worktable/worktable_top"))
+        .blockstate((ctx, prov) -> RCUBlockstateGenerator.generateSimpleBlockBottomTop(prov, ctx.getEntry(), ctx.getName(), "worktable/worktable", "worktable/worktable_bottom", "worktable/worktable_top"))
         .item(BlockItem::new)
         .model((ctx, prov) -> prov.withExistingParent(ctx.getName(), prov.modLoc("block/worktable")))
         .build()

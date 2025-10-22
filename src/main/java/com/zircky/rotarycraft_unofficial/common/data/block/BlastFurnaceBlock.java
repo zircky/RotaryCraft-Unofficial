@@ -1,13 +1,7 @@
-package com.zircky.rotarycraft_unofficial.common.data.block.engine;
+package com.zircky.rotarycraft_unofficial.common.data.block;
 
-import com.zircky.rotarycraft_unofficial.api.block.engine.AbstractEngineBlock;
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
@@ -18,10 +12,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEventListener;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-
-public class HydrokineticEngineBlock extends AbstractEngineBlock implements EntityBlock {
-  public HydrokineticEngineBlock(Properties pProperties) {
+public class BlastFurnaceBlock extends Block implements EntityBlock {
+  public BlastFurnaceBlock(Properties pProperties) {
     super(pProperties);
   }
 
@@ -39,6 +31,4 @@ public class HydrokineticEngineBlock extends AbstractEngineBlock implements Enti
   public @Nullable <T extends BlockEntity> GameEventListener getListener(ServerLevel pLevel, T pBlockEntity) {
     return EntityBlock.super.getListener(pLevel, pBlockEntity);
   }
-
-
 }

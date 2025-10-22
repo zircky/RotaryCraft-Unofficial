@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/orientable_vertical",
+  "textures": {
+    "front": "rotarycraft_unofficial:block/blast_furnace/blast_furnace_front",
+    "side": "rotarycraft_unofficial:block/blast_furnace/blast_furnace_side"
+  }
+}

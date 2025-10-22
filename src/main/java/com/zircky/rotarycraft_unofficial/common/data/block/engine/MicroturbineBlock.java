@@ -1,5 +1,6 @@
 package com.zircky.rotarycraft_unofficial.common.data.block.engine;
 
+import com.zircky.rotarycraft_unofficial.api.block.engine.AbstractEngineBlock;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -19,7 +20,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class MicroturbineBlock extends Block implements EntityBlock {
+public class MicroturbineBlock extends AbstractEngineBlock implements EntityBlock {
   public MicroturbineBlock(Properties pProperties) {
     super(pProperties);
   }
@@ -39,10 +40,4 @@ public class MicroturbineBlock extends Block implements EntityBlock {
     return EntityBlock.super.getListener(pLevel, pBlockEntity);
   }
 
-  @Override
-  public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-    pTooltip.add(Component.literal("Power: " + "2.097" + " MW").withStyle(ChatFormatting.GRAY));
-    pTooltip.add(Component.literal("Torque: " + "16.000" + " Nm").withStyle(ChatFormatting.GRAY));
-    pTooltip.add(Component.literal("Speed: " + "131.072" + " krad/s").withStyle(ChatFormatting.GRAY));
-  }
 }
