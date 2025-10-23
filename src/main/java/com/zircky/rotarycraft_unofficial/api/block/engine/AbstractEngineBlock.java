@@ -3,16 +3,20 @@ package com.zircky.rotarycraft_unofficial.api.block.engine;
 import com.zircky.rotarycraft_unofficial.common.data.material.engine.EngineDefinition;
 import com.zircky.rotarycraft_unofficial.common.data.material.engine.EngineDefinitions;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class AbstractEngineBlock extends Block {
+public abstract class AbstractEngineBlock extends BaseEntityBlock {
 
   public AbstractEngineBlock(Properties pProperties) {
     super(pProperties);
@@ -48,5 +52,10 @@ public class AbstractEngineBlock extends Block {
     } else {
       return String.format("%.3f %s", value, unit);
     }
+  }
+
+  @Override
+  public @Nullable BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
+    return null;
   }
 }
