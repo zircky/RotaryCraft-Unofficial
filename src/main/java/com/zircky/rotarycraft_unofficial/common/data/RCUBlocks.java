@@ -22,7 +22,7 @@ public class RCUBlocks {
   public static BlockEntry<PerformanceEngineBlock> PERFORMANCE_ENGINE;
   public static BlockEntry<HydrokineticEngineBlock> HYDROKINETIC_ENGINE;
   public static BlockEntry<MicroturbineBlock> MICROTURBINE;
-  public static BlockEntry<GasTurbine> GAS_TURBINE;
+  public static BlockEntry<GasTurbineBlock> GAS_TURBINE;
 
   public static BlockEntry<Block> STEEL_BLOCK;
   public static BlockEntry<Block> ANTHRACITE_BLOCK;

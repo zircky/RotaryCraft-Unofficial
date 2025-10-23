@@ -1,11 +1,7 @@
 package com.zircky.rotarycraft_unofficial.common.data.block;
 
-import com.tterrag.registrate.util.entry.BlockEntityEntry;
-import com.tterrag.registrate.util.entry.BlockEntry;
 import com.zircky.rotarycraft_unofficial.api.registry.RCURegistrates;
 import com.zircky.rotarycraft_unofficial.api.registry.registry.generator.RCUBlockstateGenerator;
-import com.zircky.rotarycraft_unofficial.common.blockentity.engine.GasTurbineBlockEntity;
-import com.zircky.rotarycraft_unofficial.common.data.RCUBlocks;
 import com.zircky.rotarycraft_unofficial.common.data.RCUCreativeModeTabs;
 import com.zircky.rotarycraft_unofficial.common.data.block.engine.DCElectricEngineBlock;
 import com.zircky.rotarycraft_unofficial.common.data.block.engine.ACElectricEngineBlock;
@@ -15,20 +11,12 @@ import com.zircky.rotarycraft_unofficial.common.data.block.engine.GasolineEngine
 import com.zircky.rotarycraft_unofficial.common.data.block.engine.PerformanceEngineBlock;
 import com.zircky.rotarycraft_unofficial.common.data.block.engine.HydrokineticEngineBlock;
 import com.zircky.rotarycraft_unofficial.common.data.block.engine.MicroturbineBlock;
-import com.zircky.rotarycraft_unofficial.common.data.block.engine.GasTurbine;
-import com.zircky.rotarycraft_unofficial.common.data.material.engine.EngineCategory;
+import com.zircky.rotarycraft_unofficial.common.data.block.engine.GasTurbineBlock;
 import com.zircky.rotarycraft_unofficial.common.data.material.engine.EngineDefinition;
-import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockState;
-import org.apache.commons.lang3.function.TriFunction;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Supplier;
 
 import static com.zircky.rotarycraft_unofficial.common.data.RCUBlocks.*;
 
@@ -96,7 +84,7 @@ public class RCUTabsPower {
         .build()
         .register();
 
-    GAS_TURBINE = RCURegistrates.REGISTRATE.block("gas_turbine", GasTurbine::new).lang("Gas Turbine")
+    GAS_TURBINE = RCURegistrates.REGISTRATE.block("gas_turbine", GasTurbineBlock::new).lang("Gas Turbine")
         .blockstate((ctx, prov) -> RCUBlockstateGenerator.generateSimpleBlockModel(prov, ctx.getEntry(), "engine/gas_turbine"))
         .item(BlockItem::new)
         .model((ctx, prov) -> prov.withExistingParent(ctx.getName(), prov.modLoc("block/engine/gas_turbine")))

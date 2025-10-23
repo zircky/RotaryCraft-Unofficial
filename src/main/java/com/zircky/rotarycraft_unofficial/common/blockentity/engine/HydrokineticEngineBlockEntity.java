@@ -1,12 +1,15 @@
 package com.zircky.rotarycraft_unofficial.common.blockentity.engine;
 
+import com.zircky.rotarycraft_unofficial.api.block.entity_block.BaseEngineBlockEntity;
+import com.zircky.rotarycraft_unofficial.common.data.RCUBlockEntities;
+import com.zircky.rotarycraft_unofficial.common.data.material.engine.EngineDefinitions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class HydrokineticEngineBlockEntity extends BlockEntity {
-  public HydrokineticEngineBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState) {
-    super(pType, pPos, pBlockState);
+public class HydrokineticEngineBlockEntity extends BaseEngineBlockEntity {
+  public HydrokineticEngineBlockEntity(BlockPos pPos, BlockState pBlockState) {
+    super(RCUBlockEntities.HYDROKINETIC_ENGINE_ENTITY.get(), pPos, pBlockState, EngineDefinitions.getById("hydrokinetic_engine").getOmega());
   }
 }
