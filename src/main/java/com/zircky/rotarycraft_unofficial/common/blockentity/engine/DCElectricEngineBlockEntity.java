@@ -9,5 +9,6 @@ import net.minecraft.world.level.block.state.BlockState;
 public class DCElectricEngineBlockEntity extends BaseEngineBlockEntity {
   public DCElectricEngineBlockEntity(BlockPos pPos, BlockState pBlockState) {
     super(RCUBlockEntities.DC_ELECTRIC_ENGINE_ENTITY.get(), pPos, pBlockState, EngineDefinitions.getById("dc_electric_engine").getOmega());
+    System.out.println("Test Entity Omega: " + EngineDefinitions.getById("dc_electric_engine").getOmega());
   }
 }

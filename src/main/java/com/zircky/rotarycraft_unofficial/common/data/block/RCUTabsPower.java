@@ -29,6 +29,7 @@ public class RCUTabsPower {
   private static void register() {
 
     DC_ELECTRIC_ENGINE = RCURegistrates.REGISTRATE.block("dc_electric_engine", DCElectricEngineBlock::new).lang("DC Electric Engine")
+        .properties(p -> p.noOcclusion())
         .blockstate((ctx, prov) -> RCUBlockstateGenerator.generateSimpleBlockModel(prov, ctx.getEntry(), "engine/dc_electric_engine"))
         .item(BlockItem::new)
         .model((ctx, prov) -> prov.withExistingParent(ctx.getName(), prov.modLoc("block/engine/dc_electric_engine")))
