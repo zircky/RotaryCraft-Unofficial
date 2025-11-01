@@ -13,7 +13,6 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 
 public class DCEngineRenderer implements BlockEntityRenderer<DCElectricEngineBlockEntity> {
@@ -30,16 +29,15 @@ public class DCEngineRenderer implements BlockEntityRenderer<DCElectricEngineBlo
 
   @Override
   public void render(DCElectricEngineBlockEntity pBlockEntity, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
+
+    pPoseStack.pushPose();
+    pPoseStack.translate(0.5, 1.5, 0.5);
+    pPoseStack.scale(1.0F, -1.0F, 1.0F);
+
     Direction facing = Direction.NORTH;
     if (pBlockEntity.getBlockState().hasProperty(HorizontalDirectionalBlock.FACING)) {
       facing = pBlockEntity.getBlockState().getValue(HorizontalDirectionalBlock.FACING);
     }
-
-    pPoseStack.pushPose();
-
-    pPoseStack.translate(0.5, 1.5, 0.5);
-
-    pPoseStack.scale(1.0F, -1.0F, 1.0F);
 
     switch (facing) {
       case SOUTH -> pPoseStack.mulPose(Axis.YP.rotationDegrees(180f));
@@ -48,17 +46,8 @@ public class DCEngineRenderer implements BlockEntityRenderer<DCElectricEngineBlo
       default -> {}
     }
 
-    float rotationDeg = 0f;
-
-    if (hasMathodSmoothRotation(pBlockEntity)) {
-      rotationDeg = getSmoothRotation(pBlockEntity, pPartialTick);
-    } else {
-      float omega = safeGetOmega(pBlockEntity);
-      float baseAngle = safeGetBaseAngle(pBlockEntity);
-      rotationDeg = baseAngle + omega * pPartialTick;
-    }
-
-    model.getRotor().yRot = (float) Math.toRadians(rotationDeg);
+    float rotationDeg = pBlockEntity.getClientRotation(pPartialTick);
+    model.getShaft().yRot = (float) Math.toRadians(rotationDeg);
 
     VertexConsumer vertexConsumer = pBuffer.getBuffer(RenderType.entityCutout(TEXTURE));
     model.renderAll(pPoseStack, vertexConsumer, pPackedLight, pPackedOverlay);
@@ -66,24 +55,8 @@ public class DCEngineRenderer implements BlockEntityRenderer<DCElectricEngineBlo
     pPoseStack.popPose();
   }
 
-  private float safeGetBaseAngle(DCElectricEngineBlockEntity pBlockEntity) {
-    return 0;
-  }
-
-  private float safeGetOmega(DCElectricEngineBlockEntity pBlockEntity) {
-    return 0;
-  }
-
   @Override
   public boolean shouldRenderOffScreen(DCElectricEngineBlockEntity pBlockEntity) {
-    return false;
-  }
-
-  private float getSmoothRotation(DCElectricEngineBlockEntity pBlockEntity, float pPartialTick) {
-    return 0;
-  }
-
-  private boolean hasMathodSmoothRotation(DCElectricEngineBlockEntity pBlockEntity) {
     return false;
   }
 }

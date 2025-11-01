@@ -2,6 +2,7 @@ package com.zircky.rotarycraft_unofficial.common.data;
 
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.zircky.rotarycraft_unofficial.api.registry.RCURegistrates;
+import com.zircky.rotarycraft_unofficial.client.render.engine.DCEngineRenderer;
 import com.zircky.rotarycraft_unofficial.common.blockentity.BlastFurnaceBlockEntity;
 import com.zircky.rotarycraft_unofficial.common.blockentity.engine.DCElectricEngineBlockEntity;
 import com.zircky.rotarycraft_unofficial.common.blockentity.engine.ACElectricEngineBlockEntity;
@@ -17,6 +18,7 @@ import com.zircky.rotarycraft_unofficial.common.data.material.engine.EngineDefin
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.api.distmarker.Dist;
 
 public class RCUBlockEntities {
 
@@ -72,6 +74,8 @@ public class RCUBlockEntities {
       .blockEntity("dc_electric_engine", ((BlockEntityType<DCElectricEngineBlockEntity> type, BlockPos pos, BlockState blockState) ->
           new DCElectricEngineBlockEntity(pos, blockState)))
       .validBlocks(RCUBlocks.DC_ELECTRIC_ENGINE)
+      .onRegister(e -> System.out.println("[RotaryCraftUnofficial] Registered DC Engine BE"))
+      .renderer(() -> DCEngineRenderer::new)
       .register();
 
   public static final BlockEntityEntry<BlastFurnaceBlockEntity> BLAST_FURNACE_ENTITY = RCURegistrates.REGISTRATE

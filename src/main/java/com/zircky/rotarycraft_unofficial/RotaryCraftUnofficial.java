@@ -1,10 +1,15 @@
 package com.zircky.rotarycraft_unofficial;
 
 import com.zircky.rotarycraft_unofficial.api.registry.RCURegistrates;
+import com.zircky.rotarycraft_unofficial.client.ClientSetup;
+import com.zircky.rotarycraft_unofficial.client.model.engine.ModelDCEngine;
 import com.zircky.rotarycraft_unofficial.common.RCUMenu;
 import com.zircky.rotarycraft_unofficial.common.data.*;
 import com.zircky.rotarycraft_unofficial.utils.FormattingUtil;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -19,18 +24,20 @@ public class RotaryCraftUnofficial {
   public static final Logger LOGGER = LogManager.getLogger();
 
   public RotaryCraftUnofficial() {
-    RotaryCraftUnofficial.init();
     var bus = FMLJavaModLoadingContext.get().getModEventBus();
+    RotaryCraftUnofficial.init();
     bus.register(this);
+
+    DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ClientSetup::initClient);
   }
 
   public static void init() {
     LOGGER.info("{} is initializing...", NAME);
     RCURegistrates.REGISTRATE.registerRegistrate();
-    RCUItems.init();
-    RCUMaterials.init();
     RCUBlocks.init();
     RCUBlockEntities.init();
+    RCUItems.init();
+    RCUMaterials.init();
     RCUMenu.init();
     RCURecipes.init();
     RCURecipeType.init();

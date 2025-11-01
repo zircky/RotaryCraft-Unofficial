@@ -1,6 +1,9 @@
 package com.zircky.rotarycraft_unofficial.api.block.engine;
 
+import com.zircky.rotarycraft_unofficial.RotaryCraftUnofficial;
 import com.zircky.rotarycraft_unofficial.api.block.entity_block.BaseEngineBlockEntity;
+import com.zircky.rotarycraft_unofficial.common.blockentity.engine.DCElectricEngineBlockEntity;
+import com.zircky.rotarycraft_unofficial.common.data.RCUBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;
@@ -18,8 +21,8 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseEngineBlock<T extends BaseEngineBlockEntity> extends AbstractEngineBlock {
-  public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-  public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
+  protected static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+  protected static final BooleanProperty POWERED = BlockStateProperties.POWERED;
 
   protected BaseEngineBlock(Properties pProperties) {
     super(pProperties);
@@ -44,7 +47,9 @@ public abstract class BaseEngineBlock<T extends BaseEngineBlockEntity> extends A
 
   @Override
   public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-    return createTickerHelper(pBlockEntityType, getEntityType(), BaseEngineBlockEntity::clinetTick);
+    return pLevel.isClientSide
+        ? createTickerHelper(pBlockEntityType, RCUBlockEntities.DC_ELECTRIC_ENGINE_ENTITY.get(), BaseEngineBlockEntity::clientTick)
+        : null;
   }
 
   protected abstract BlockEntityType<T> getEntityType();
@@ -53,12 +58,27 @@ public abstract class BaseEngineBlock<T extends BaseEngineBlockEntity> extends A
   public void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pNeighborBlock, BlockPos pNeighborPos, boolean pMovedByPiston) {
     if (!pLevel.isClientSide) {
       boolean powered = pLevel.hasNeighborSignal(pPos);
+      RotaryCraftUnofficial.LOGGER.info("Redstone check at {}: {}", pPos, powered);
+
       if (powered != pState.getValue(POWERED)) {
         pLevel.setBlock(pPos, pState.setValue(POWERED, powered), 3);
-        BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-        if (blockEntity instanceof BaseEngineBlockEntity engineBlock) {
-          engineBlock.setActive(powered);
+
+        BlockEntity be = pLevel.getBlockEntity(pPos);
+        if (be instanceof BaseEngineBlockEntity engine) {
+          engine.setActive(powered);
+          RotaryCraftUnofficial.LOGGER.info("Engine active set to {}", powered);
         }
+      }
+    }
+  }
+
+  @Override
+  public void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState, boolean pMovedByPiston) {
+    if (!pLevel.isClientSide) {
+      boolean powered = pLevel.hasNeighborSignal(pPos);
+      BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
+      if (blockEntity instanceof BaseEngineBlockEntity engineBlock) {
+        engineBlock.setActive(powered);
       }
     }
   }
